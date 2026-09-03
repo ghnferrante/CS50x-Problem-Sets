@@ -1,3 +1,6 @@
+// Harvard CS50x - Week 1 - Problem Set 1 
+// Mario: https://cs50.harvard.edu/x/psets/1/mario/more/
+
 #include <cs50.h>
 #include <stdio.h>
 
