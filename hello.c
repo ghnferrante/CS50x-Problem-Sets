@@ -1,3 +1,6 @@
+// Harvard CS50x - Week 1 - Problem Set 1 
+// Hello, It’s Me: https://cs50.harvard.edu/x/psets/1/me/
+
 #include <cs50.h>
 #include <stdio.h>
 
