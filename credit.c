@@ -60,7 +60,7 @@ int get_length(long number)
     exit(0);
 }
 
-// Get the 2 first numbers's digits
+// Get the first n numbers's digits requested
 int get_start(int qty_start_numbers, int length, long number)
 {
     int n = number / pow(10, length - qty_start_numbers);
