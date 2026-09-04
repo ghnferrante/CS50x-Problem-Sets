@@ -20,7 +20,8 @@ int main(void)
     int luhn = verify_luhn(length, card_number); // Verify checksum according to Luhn's algorithm
                                                  // (if incorrect, print INVALID and stop)
 
-    int start_numbers = get_start(2, length, card_number); // Get the 2 first numbers's digits
+    int start_numbers = get_start(2, length, card_number); // Get the 2 first numbers's digits for 
+                                                           // Card Brand verification
 
     // Check validity for each Credit Card Brand (if none, print INVALID)
     if (length == 15 && (start_numbers == 34 || start_numbers == 37))
@@ -45,7 +46,7 @@ int main(void)
 int get_length(long number)
 {
     int n;
-
+    
     for (int i = 13; i <= 16; i++)
     {
         n = number / pow(10, i - 1);
@@ -54,13 +55,12 @@ int get_length(long number)
             return i;
         }
     }
-
     printf("INVALID\n");
-
+    
     exit(0);
 }
 
-// Get the first n numbers's digits requested
+// Get the first n (qty_start_numbers) numbers's digits using its length
 int get_start(int qty_start_numbers, int length, long number)
 {
     int n = number / pow(10, length - qty_start_numbers);
@@ -76,7 +76,7 @@ int verify_luhn(int length, long number)
 
     for (int i = 1; i <= length; i++)
     {
-        if (i % 2 == 0) // even length
+        if (i % 2 == 0) // even digit position
         {
             int p = 2 * (number % 10);
 
@@ -88,15 +88,15 @@ int verify_luhn(int length, long number)
             n = n + p;
         }
 
-        if ((i % 2) != 0) // odd length
+        if ((i % 2) != 0) // odd digit position
         {
             n = (number % 10) + n;
         }
 
-        number /= 10; // extract last digit for restarting loop
+        number /= 10; // extract the number last digit for restarting loop
     }
 
-    if (n % 10 == 0)
+    if (n % 10 =! 0) // verify if it ends with 0
     {
         return 1;
     }
