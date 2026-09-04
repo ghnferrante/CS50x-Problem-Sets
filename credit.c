@@ -8,7 +8,7 @@
 
 int get_length(long number);
 int get_start(int qty_start_numbers, int length, long number);
-int verify_luhn(int length, long number);
+void verify_luhn(int length, long number);
 
 int main(void)
 {
@@ -17,8 +17,8 @@ int main(void)
     int length = get_length(card_number); // Get number length between 13-16 (if not, print
                                           // INVALID and stop)
 
-    int luhn = verify_luhn(length, card_number); // Verify checksum according to Luhn's algorithm
-                                                 // (if incorrect, print INVALID and stop)
+    verify_luhn(length, card_number); // Verify checksum according to Luhn's algorithm
+                                      // (if incorrect, print INVALID and stop)
 
     int start_numbers = get_start(2, length, card_number); // Get the 2 first numbers's digits for 
                                                            // Card Brand verification
@@ -69,7 +69,7 @@ int get_start(int qty_start_numbers, int length, long number)
 }
 
 // Verify checksum according to Luhn's algorithm (if incorrect, print INVALID and stop)
-int verify_luhn(int length, long number)
+void verify_luhn(int length, long number)
 {
 
     int n = 0;
@@ -96,11 +96,7 @@ int verify_luhn(int length, long number)
         number /= 10; // extract the number last digit for restarting loop
     }
 
-    if (n % 10 =! 0) // verify if it ends with 0
-    {
-        return 1;
-    }
-    else
+    if (n % 10 != 0) // verify if it ends with 0
     {
         printf("INVALID\n");
 
