@@ -1,3 +1,6 @@
+// Harvard CS50x - Week 2 - Problem Set 2 
+// Scrabble: https://cs50.harvard.edu/x/psets/2/scrabble/
+
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
