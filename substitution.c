@@ -1,3 +1,6 @@
+// Harvard CS50x - Week 2 - Problem Set 2 
+// Scrabble: https://cs50.harvard.edu/x/psets/2/substitution/
+
 // Subsititution cipher that replaces each letter of a plaintext to another. Encrypted by
 // a 26-letter key that sets a new alphabetical order. A key as NQXPOMAFTRHLZGECYJIUWSKDVB
 // replaces A as N, B as Q and so on.
