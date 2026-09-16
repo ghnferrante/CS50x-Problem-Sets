@@ -1,5 +1,5 @@
 // Harvard CS50x - Week 3 - Problem Set 3 
-// Plurality: https://cs50.harvard.edu/x/psets/3/tideman/
+// Tideman: https://cs50.harvard.edu/x/psets/3/tideman/
 // Code until line 102 provided by Harvard
 
 #include <cs50.h>
